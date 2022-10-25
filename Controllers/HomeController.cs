@@ -3,29 +3,26 @@ using Microsoft.AspNetCore.Mvc;
 using tp_09.Models;
 
 namespace tp_09.Controllers;
-
-public class HomeController : Controller
-{
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
+    public class HomeController : Controller
     {
-        _logger = logger;
-    }
+        
+        public IActionResult Index()
+        {
+            return View();
+        }
 
-    public IActionResult Index()
-    {
-        return View();
-    }
+        public IActionResult CrearReserva()
+        {
+            ViewBag.ListaExhibiciones = BD.GetExhibiciones();
+            return View();
+        }
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
+        public IActionResult GuardarReserva(Reserva reserva)
+        {
+            BD.InsertReserva(reserva);
+            @ViewBag.Reserva = BD.GetReservaById(reserva.IdReserva);
+                return View("Index");
+        }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        
     }
-}
