@@ -13,6 +13,7 @@ html {
   min-height: 100%;
 }
 
-body {
-  margin-bottom: 60px;
+body{
+  background-image: url(../img/fondo.png);
+  background-size:cover;
 }
