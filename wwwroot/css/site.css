@@ -8,9 +8,23 @@ html {
   }
 }
 
+.titulo{
+  color:white;
+}
+
+.segdotitulo{
+  color:#9E9E9E;
+}
+
 html {
   position: relative;
   min-height: 100%;
+}
+
+.linkmasinfo{
+text-decoration:solid;
+text-decoration: underline;
+color:white;
 }
 
 body{

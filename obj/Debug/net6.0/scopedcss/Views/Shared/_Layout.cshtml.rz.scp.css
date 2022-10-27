@@ -1,17 +1,71 @@
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+*[b-qk3hk0ihme] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.buttons[b-qk3hk0ihme] {
+  margin: 10%;
+  text-align: center;
+}
+
+.btn-hover[b-qk3hk0ihme] {
+  width: 10rem;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 2.5rem;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+
+  border-radius: 50px;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.btn-hover:hover[b-qk3hk0ihme] {
+  background-position: 100% 0;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus[b-qk3hk0ihme] {
+  outline: none;
+}
+
+.btn-hover.color-3[b-qk3hk0ihme] {
+  background-image: linear-gradient(to right, #667eea, #764ba2, #6B8DD6, #8E37D7);
+  box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
+}
+
 a.navbar-brand[b-qk3hk0ihme] {
   white-space: normal;
   text-align: center;
   word-break: break-all;
 }
 
+.logo[b-qk3hk0ihme]{
+  height:5rem;
+}
 
+.bg-blue[b-qk3hk0ihme]{
+background-color: #180F53;
+}
 
 a[b-qk3hk0ihme] {
-  color: #0077cc;
+  color: white !important;
 }
+
 
 .btn-primary[b-qk3hk0ihme] {
   color: #fff;
