@@ -14,7 +14,7 @@ namespace tp_09.Controllers;
         public IActionResult CrearReserva()
         {
             ViewBag.ListaExhibiciones = BD.GetExhibiciones();
-            return View();
+            return View("ComprarTickets");
         }
 
         public IActionResult GuardarReserva(Reserva reserva)
@@ -24,5 +24,9 @@ namespace tp_09.Controllers;
                 return View("Index");
         }
 
+        public IActionResult SobreNosotros()
+        {
+            return View();
+        }
         
     }

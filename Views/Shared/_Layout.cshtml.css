@@ -16,7 +16,7 @@ for details on configuring this project to bundle and minify static web assets. 
   width: 10rem;
   font-size: 16px;
   font-weight: 600;
-  color: #fff;
+  color: black;
   cursor: pointer;
   margin: 20px;
   height: 2.5rem;
@@ -43,9 +43,16 @@ for details on configuring this project to bundle and minify static web assets. 
   outline: none;
 }
 
+
+
 .btn-hover.color-3 {
   background-image: linear-gradient(to right, #667eea, #764ba2, #6B8DD6, #8E37D7);
   box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
+}
+
+.btn-hover.color-2 {
+  background-image: linear-gradient(to right, #000000, #141414, #070707fd, #000000);
+  box-shadow: 0 4px 15px 0 rgba(60, 58, 61, 0);
 }
 
 a.navbar-brand {
@@ -55,7 +62,7 @@ a.navbar-brand {
 }
 
 .logo{
-  height:5rem;
+  height:4rem;
 }
 
 .bg-blue{
