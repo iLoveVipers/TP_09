@@ -2,75 +2,46 @@
     ViewData["Title"] = "Comprar Tickets";
 }
 
-<div class="formbold-main-wrapper">
- 
-  <div class="formbold-form-wrapper">
-    <form action="#" method="POST">
-      <div class="flex flex-wrap formbold--mx-3">
-        <div class="w-full sm:w-half formbold-px-3">
-          <div class="formbold-mb-5">
-            <label for="Nombre" class="formbold-form-label"> Nombre </label>
-            <input
-              type="text"
-              name="Nombre"
-              id="Nombre"
-              placeholder="Nombre"
-              class="formbold-form-input"
-            />
-          </div>
-        </div>
-        <div class="w-full sm:w-half formbold-px-3">
-          <div class="formbold-mb-5">
-            <label for="Apellido" class="formbold-form-label"> Apellido </label>
-            <input
-              type="text"
-              name="Apellido"
-              id="Apellido"
-              placeholder="Apellido"
-              class="formbold-form-input"
-            />
-          </div>
-        </div>
-      </div>
-
-      <div class="formbold-mb-5">
-        <label for="entradas" class="formbold-form-label">
-          Cantidad de Entradas
-        </label>
-        <input
-          type="number"
-          name="entradas"
-          id="entradas"
-          placeholder="1"
-          class="formbold-form-input"
-        />
-      </div>
-
-      <div class="flex formbold-mb-5">
-        <div class="flex">
-          <input
-            type="radio"
-            name="radio1"
-            id="radioButton1"
-            class="formbold-radio"
-          />
-          <label for="radioButton1" class="formbold-radio-label"> Exhibicion 1 </label>
-        </div>
-        <div class="flex">
-          <input
-            type="radio"
-            name="radio1"
-            id="radioButton2"
-            class="formbold-radio"
-          />
-          <label for="radioButton2" class="formbold-radio-label"> Exihibicion 2 </label>
-        </div>
-      </div>
-
-      <div class="align-center">
-        <button class="formbold-btn align-center">Comprar</button>
-      </div>
-    </form>
-  </div>
+<div class="container-fluid headerform">
+    <h2>Compra de Entradas</h2>
+    <p>Porfavor complete los siguientes campos</p>
 </div>
 
+  <form method="post" action="">
+
+
+  <div class="container-md form">
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingInput" placeholder="Ingrese su Nombre">
+        <label for="floatingInput">Nombre</label>
+        </div>
+      <div class="form-floating mb-3">
+      <input type="email" class="form-control" id="floatingInput" placeholder="Ingrese su Apellido">
+      <label for="floatingPassword">Apellido</label>
+        </div>
+      <div class="form-floating mb-3">
+      <input type="tel" class="form-control" id="floatingInput" placeholder="Ingrese su DNI">
+      <label for="floatingPassword">DNI</label>
+        </div>
+      <div class="form-floating mb-3">
+        <input type="number" max="5" min="1" step="1" class="form-control" id="floatingInput" placeholder="Ingrese su numero de entradas">
+         <label for="floatingPassword">Numero de Entradas</label>
+        </div>
+  
+          <div class="form-floating mb-3">
+          <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+            @{
+              int num= 1;
+              foreach(Exhibicion item in ViewBag.ListaExhibiciones)
+              {
+                num++;
+                <option  value="@num" >@item.Titulo</option>
+              }
+           }
+            </select>
+            <label for="floatingSelect">Seleccione La Exhibicion a Ver</label>
+          </div>
+
+    <button class="btn-hover color-3 confirmar" type="sumbit" value="Confirmar">Confirmar</button>
+  </div>
+  </form>

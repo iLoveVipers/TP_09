@@ -6,7 +6,7 @@ using Dapper;
 namespace tp_09{
     public static class BD
     {
-        private static string _connectionString= @"Server=A-PHZ2-CIDI-050; DataBase=AQUARIO; Trusted_Connection=True;";
+        private static string _connectionString= @"Server=A-PHZ2-CIDI-049; DataBase=AQUARIO; Trusted_Connection=True;";
         
         public static List<Exhibicion> GetExhibiciones()
         {
