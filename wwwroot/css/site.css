@@ -139,4 +139,10 @@ a {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
-
+.header{
+  color: white;
+  margin-left: 2rem;
+  margin-top: 5rem;
+  text-align: center;
+  
+}

@@ -1,0 +1,41 @@
+@{
+    ViewData["Title"] = "Exhibiciones";
+}
+
+<h2 class="header">AQUARIUM ofrece numerosas actividades <br> y visitas guiadas para realizar</h2>
+
+<div class="container">
+
+@{
+    int num = 1;
+    foreach(Exhibicion item in ViewBag.ListaExhibiciones)
+    {
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+        <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="@item.IdExhibicion" class="active" aria-current="true" aria-label="Slide 1"></button>
+       
+         </div>
+         <div class="carousel-inner">
+        <div class="carousel-item active">
+        <img src="" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+            <h5>"@item.Titulo"</h5>
+            <p>"@item.Descripcion"</p>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Atras</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Proximo</span>
+        </button>
+        </div>
+        </div>
+        </div>
+         num++;
+    }
+
+}
+
+</div>

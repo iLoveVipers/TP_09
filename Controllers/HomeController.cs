@@ -28,5 +28,11 @@ namespace tp_09.Controllers;
         {
             return View();
         }
+
+        public IActionResult Exhibiciones()
+        {
+            ViewBag.ListaExhibiciones = BD.GetExhibiciones();
+            return View();
+        }
         
     }
