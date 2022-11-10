@@ -9,14 +9,16 @@ namespace tp_09{
         private DateTime  _FechaInicio;
         private DateTime  _FechaFinalizacion;
         private int  _ValorPersona;
+        private string _Descripcion;
         private int _FkTematica;
         public Exhibicion(){}
-        public Exhibicion (int idExhibicion, string titulo, DateTime  fechaInicio, DateTime  fechaFinalizacion, int  valorPersona, int fkTematica)
+        public Exhibicion (int idExhibicion, string titulo, DateTime  fechaInicio, DateTime  fechaFinalizacion, int  valorPersona, string descripcion, int fkTematica)
         {
             _IdExhibicion = idExhibicion;
             _FechaInicio = fechaInicio;
             _FechaFinalizacion = fechaFinalizacion;
             _ValorPersona = valorPersona;
+            _Descripcion = descripcion;
             _FkTematica = fkTematica;
         }
 
@@ -52,6 +54,12 @@ namespace tp_09{
         {
             get {return _FkTematica;}
             set {_FkTematica=value;}
+        }
+
+         public string Descripcion
+        {
+            get {return _Descripcion;}
+            set {_Descripcion=value;}
         }
     }
 }
