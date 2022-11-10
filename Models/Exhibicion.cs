@@ -20,7 +20,7 @@ namespace tp_09{
             _FechaFinalizacion = fechaFinalizacion;
             _ValorPersona = valorPersona;
             _Descripcion = descripcion;
-            _Img= _img;
+            _Img= img;
             _FkTematica = fkTematica;
         }
 
