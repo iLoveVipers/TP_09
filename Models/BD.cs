@@ -6,7 +6,7 @@ using Dapper;
 namespace tp_09{
     public static class BD
     {
-        private static string _connectionString= @"Server=A-PHZ2-CIDI-050; DataBase=AQUARIO; Trusted_Connection=True;";
+        private static string _connectionString= @"Server=A-PHZ2-CIDI-049; DataBase=AQUARIO; Trusted_Connection=True;";
         
         public static List<Exhibicion> GetExhibiciones()
         {
@@ -33,13 +33,13 @@ namespace tp_09{
 
         public static void InsertReserva(Reserva item)
         {
-            string SQL = "INSERT INTO Reservas(Nombre, Apellido, DNI, FKExhibicion, Cantidad)";
-            SQL += " VALUES (@pNombre, @pApellido, @pDNI, @pFKExhibicion, @pCantidad) "; 
+            string SQL = "INSERT INTO Reservas(Email, NombreApellido, DNI, FKExhibicion, Cantidad)";
+            SQL += " VALUES (@pEmail, @pNombreApellido, @pDNI, @pFKExhibicion, @pCantidad) "; 
             using(SqlConnection db = new SqlConnection(_connectionString))
             {
                 db.Execute(SQL, new {
-                    pNombre = item.Nombre,
-                    pApellido = item.Apellido,
+                    pEmail = item.Email,
+                    pNombreApellido = item.NombreApellido,
                     pDNI = item.DNI,
                     pFKExhibicion = item.FKExhibicion,
                     pCantidad = item.Cantidad

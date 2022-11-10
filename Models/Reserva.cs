@@ -5,19 +5,19 @@ namespace tp_09{
     {
 
         private int  _IdReserva;
-        private string _Nombre;
-        private string  _Apellido;
+        private string _Email;
+        private string  _NombreApellido;
         private int  _DNI;
         private int _FKExhibicion;
 
         private int _Cantidad;
         private int _PrecioFinal;
         public Reserva(){}
-        public Reserva (int idReserva, string nombre, string  apellido, int  dni, int fkExhibicion, int precioFinal)
+        public Reserva (int idReserva, string email, string  nombreApellido, int  dni, int fkExhibicion, int precioFinal)
         {
             _IdReserva = idReserva;
-            _Nombre = nombre;
-            _Apellido = apellido;
+            Email = email;
+            _NombreApellido = nombreApellido;
             _DNI = dni;
             _FKExhibicion = fkExhibicion;
             _Cantidad = Cantidad;
@@ -29,16 +29,16 @@ namespace tp_09{
             get {return _IdReserva;}
             set {_IdReserva=value;}
         }
-        public string Nombre
+        public string Email
         {
-            get {return _Nombre;}
-            set {_Nombre=value;}
+            get {return _Email;}
+            set {_Email=value;}
         }
 
-        public string Apellido
+        public string NombreApellido
         {
-            get {return _Apellido;}
-            set {_Apellido=value;}
+            get {return _NombreApellido;}
+            set {_NombreApellido=value;}
         }
 
         public int DNI
