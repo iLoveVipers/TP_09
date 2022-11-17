@@ -12,16 +12,16 @@
 
   <div class="container-md form">
       <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="floatingInput" placeholder="Ingrese su email" name="Email">
+        <input type="email" class="form-control" id="email" placeholder="Ingrese su email" name="Email">
         <label class ="captionform" for="floatingInput">Email</label>
         </div>
       <div class="form-floating mb-3">
-      <input type="text" class="form-control" id="floatingInput" placeholder="Ingrese su nombre" name="Nombre">
+      <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre" name="Nombre">
       <label class ="captionform" for="floatingPassword">Nombre</label>
         </div>
 
          <div class="form-floating mb-3">
-      <input type="text" class="form-control" id="floatingInput" placeholder="Ingrese su nombre" name="Apellido">
+      <input type="text" class="form-control" id="apellido" placeholder="Ingrese su nombre" name="Apellido">
       <label class ="captionform" for="floatingPassword">Apellido</label>
         </div>
 
@@ -31,12 +31,12 @@
         </div>
       
       <div class="form-floating mb-3">
-        <input type="number" max="5" min="1" step="1" class="form-control" id="floatingInput" placeholder="Ingrese su numero de entradas" name="Cantidad">
+        <input type="number" max="5" min="1" step="1" class="form-control" id="cantidad" placeholder="Ingrese su numero de entradas" name="Cantidad">
          <label class ="captionform" for="floatingPassword">Numero de Entradas</label>
         </div>
   
           <div class="form-floating mb-3">
-          <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="fkExhibicion">
+          <select class="form-select" id="exhibicion" aria-label="Floating label select example" name="fkExhibicion">
             @{
               int num= 1;
               foreach(Exhibicion item in ViewBag.ListaExhibiciones)
@@ -49,6 +49,23 @@
             <label class ="captionform" for="floatingSelect">Exhibicion a Visitar</label>
           </div>
 
-    <button class="btn-hover color-3 confirmar captionform" type="sumbit" value="Confirmar">Confirmar</button>
+    <button class="btn-hover color-3 confirmar captionform" type="sumbit" value="Confirmar" data-toggle="modal" data-target="#ModalSerie" onclick="FinReserva()">Confirmar</button>
+    <div class="modal fade" id="ModalSerie" tabindex="-1" role="dialog" aria-hidden="true">
+       <div class="modal-dialog" role="document">
+             <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="ModalTitle"></h5> 
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div id="ModalBody"></div>
+              </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
+       </div>
+    </div>
   </div>
   </form>
