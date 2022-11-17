@@ -6,7 +6,7 @@ using Dapper;
 namespace tp_09{
     public static class BD
     {
-        private static string _connectionString= @"Server=A-PHZ2-CIDI-005; DataBase=AQUARIO; Trusted_Connection=True;";
+        private static string _connectionString= @"Server=A-PHZ2-CIDI-049; DataBase=AQUARIO; Trusted_Connection=True;";
         
         public static List<Exhibicion> GetExhibiciones()
         {
@@ -40,7 +40,7 @@ namespace tp_09{
                 db.Execute(SQL, new {
                     pEmail = item.Email,
                     pNombreApellido = item.NombreApellido,
-                    pDNI = item.DNI,
+                    pimgDNI = item.imgDNI,
                     pFKExhibicion = item.FKExhibicion,
                     pCantidad = item.Cantidad
                 }); 

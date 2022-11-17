@@ -7,29 +7,36 @@
     <p>Porfavor complete los siguientes campos</p>
 </div>
 
-  <form method="post" action="">
+  <form  method="post" action='@Url.Action("GuardarReserva","Home")' enctype="multipart/form-data">
 
 
   <div class="container-md form">
       <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="floatingInput" placeholder="Ingrese su email">
+        <input type="email" class="form-control" id="floatingInput" placeholder="Ingrese su email" name="Email">
         <label class ="captionform" for="floatingInput">Email</label>
         </div>
       <div class="form-floating mb-3">
-      <input type="text" class="form-control" id="floatingInput" placeholder="Ingrese su nombre completo">
-      <label class ="captionform" for="floatingPassword">Nombre y apellido</label>
+      <input type="text" class="form-control" id="floatingInput" placeholder="Ingrese su nombre" name="Nombre">
+      <label class ="captionform" for="floatingPassword">Nombre</label>
         </div>
-      <div class="form-floating mb-3">
-      <input type="tel" class="form-control" id="floatingInput" placeholder="Ingrese su DNI">
-      <label class ="captionform" for="floatingPassword">DNI</label>
+
+         <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingInput" placeholder="Ingrese su nombre" name="Apellido">
+      <label class ="captionform" for="floatingPassword">Apellido</label>
         </div>
+
+        <div class="form-floating mb-3">
+          <input type="file" name="imgDNI">
+          <label class="captionform" for="floatingInput">Imagen de su DNI</label>
+        </div>
+      
       <div class="form-floating mb-3">
-        <input type="number" max="5" min="1" step="1" class="form-control" id="floatingInput" placeholder="Ingrese su numero de entradas">
+        <input type="number" max="5" min="1" step="1" class="form-control" id="floatingInput" placeholder="Ingrese su numero de entradas" name="Cantidad">
          <label class ="captionform" for="floatingPassword">Numero de Entradas</label>
         </div>
   
           <div class="form-floating mb-3">
-          <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+          <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="fkExhibicion">
             @{
               int num= 1;
               foreach(Exhibicion item in ViewBag.ListaExhibiciones)

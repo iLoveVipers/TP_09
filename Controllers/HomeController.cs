@@ -1,11 +1,18 @@
 ﻿using System.Diagnostics;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using tp_09.Models;
 
 namespace tp_09.Controllers;
     public class HomeController : Controller
     {
-        
+        private IWebHostEnvironment Environment;
+
+        public HomeController(IWebHostEnvironment environment)
+        {
+            Environment= environment;
+        }
         public IActionResult Index()
         {
             return View();
@@ -17,8 +24,17 @@ namespace tp_09.Controllers;
             return View("ComprarTickets");
         }
 
-        public IActionResult GuardarReserva(Reserva reserva)
+        [HttpPost]
+        public IActionResult GuardarReserva(Reserva reserva, IFormFile imgDNI)
         {
+            if (imgDNI.Length > 0)
+            {
+                string wwwRootLocal = this.Environment.ContentRootPath + @"\wwwroot\" + imgDNI.FileName;
+                using(var stream = System.IO.File.Create(wwwRootLocal))
+                {
+                    imgDNI.CopyToAsync(stream);
+                }
+            }
             BD.InsertReserva(reserva);
             @ViewBag.Reserva = BD.GetReservaById(reserva.IdReserva);
                 return View("Index");
