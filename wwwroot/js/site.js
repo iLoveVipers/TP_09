@@ -1,4 +1,9 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
+﻿function FinReserva()
+{
+    var nombre = $("#nombre").val();
+    var exhibicion = $("#exhibicion").val();
+    var cantidad = $("#cantidad").val();
+    var email = $("#email").val();
+    $('#ModalTitle').text("Reserva de " + nombre);
+    $('#ModalBody').html(nombre + ", gracias por tu reserva para " + exhibicion + "!" + "<br> <br>" + "Tu(s) " + cantidad + " entradas las encontrarás en tu inbox de " + email + ".");
+}
