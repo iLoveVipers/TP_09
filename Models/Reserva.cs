@@ -6,20 +6,22 @@ namespace tp_09{
 
         private int  _IdReserva;
         private string _Email;
-        private string  _NombreApellido;
-        private byte  _ImgDNI;
-        private int _FKExhibicion;
+        private string  _Nombre;
+        private string _Apellido;
+        private string  _DNI;
+        private int _idExhibicion;
 
         private int _Cantidad;
         private int _PrecioFinal;
         public Reserva(){}
-        public Reserva (int idReserva, string email, string  nombreApellido, byte imgDNI, int fkExhibicion, int precioFinal)
+        public Reserva (int idReserva, string email, string  Nombre, string Apellido, string DNI, int idExhibicion, int precioFinal)
         {
             _IdReserva = idReserva;
             Email = email;
-            _NombreApellido = nombreApellido;
-            _ImgDNI = imgDNI;
-            _FKExhibicion = fkExhibicion;
+            _Nombre = Nombre;
+            _Apellido = Apellido;
+            _DNI = DNI;
+            _idExhibicion = idExhibicion;
             _Cantidad = Cantidad;
             _PrecioFinal = PrecioFinal;
         }
@@ -35,22 +37,26 @@ namespace tp_09{
             set {_Email=value;}
         }
 
-        public string NombreApellido
+        public string Nombre
         {
-            get {return _NombreApellido;}
-            set {_NombreApellido=value;}
+            get {return _Nombre;}
+            set {_Nombre=value;}
+        }
+             public string Apellido
+        {
+            get {return _Apellido;}
+            set {_Apellido=value;}
+        }
+        public string DNI
+        {
+            get {return _DNI;}
+            set {_DNI= value;}
         }
 
-        public byte imgDNI
+        public int idExhibicion
         {
-            get {return _ImgDNI;}
-            set {_ImgDNI=value;}
-        }
-
-        public int FKExhibicion
-        {
-            get {return _FKExhibicion;}
-            set {_FKExhibicion=value;}
+            get {return _idExhibicion;}
+            set {_idExhibicion=value;}
         }
 
         public int Cantidad

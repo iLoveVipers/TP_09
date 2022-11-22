@@ -1,71 +1,88 @@
 @{
-    ViewData["Title"] = "Comprar Tickets";
+  ViewData["Title"] = "Comprar Tickets";
 }
 
 <div class="container-fluid headerform">
-    <h2>Compra de Entradas</h2>
-    <p>Porfavor complete los siguientes campos</p>
+  <h2>Compra de Entradas</h2>
+  <p>Porfavor complete los siguientes campos</p>
 </div>
 
-  <form  method="post" action='@Url.Action("GuardarReserva","Home")' enctype="multipart/form-data">
+<form method="post" action='@Url.Action("GuardarReserva","Home")' enctype="multipart/form-data">
 
 
   <div class="container-md form">
-      <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="email" placeholder="Ingrese su email" name="Email">
-        <label class ="captionform" for="floatingInput">Email</label>
-        </div>
-      <div class="form-floating mb-3">
-      <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre" name="Nombre">
-      <label class ="captionform" for="floatingPassword">Nombre</label>
-        </div>
-
-         <div class="form-floating mb-3">
-      <input type="text" class="form-control" id="apellido" placeholder="Ingrese su nombre" name="Apellido">
-      <label class ="captionform" for="floatingPassword">Apellido</label>
-        </div>
-
-        <div class="form-floating mb-3">
-          <input type="file" name="imgDNI">
-          <label class="captionform" for="floatingInput">Imagen de su DNI</label>
-        </div>
-      
-      <div class="form-floating mb-3">
-        <input type="number" max="5" min="1" step="1" class="form-control" id="cantidad" placeholder="Ingrese su numero de entradas" name="Cantidad">
-         <label class ="captionform" for="floatingPassword">Numero de Entradas</label>
-        </div>
-  
-          <div class="form-floating mb-3">
-          <select class="form-select" id="exhibicion" aria-label="Floating label select example" name="fkExhibicion">
-            @{
-              int num= 1;
-              foreach(Exhibicion item in ViewBag.ListaExhibiciones)
-              {
-                num++;
-                <option  value="@num" >@item.Titulo</option>
-              }
-           }
-            </select>
-            <label class ="captionform" for="floatingSelect">Exhibicion a Visitar</label>
-          </div>
-
-    <button class="btn-hover color-3 confirmar captionform" type="sumbit" value="Confirmar" data-toggle="modal" data-target="#ModalSerie" onclick="FinReserva()">Confirmar</button>
-    <div class="modal fade" id="ModalSerie" tabindex="-1" role="dialog" aria-hidden="true">
-       <div class="modal-dialog" role="document">
-             <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="ModalTitle"></h5> 
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <div id="ModalBody"></div>
-              </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          </div>
-       </div>
+    <div class="form-floating mb-3">
+      <input type="email" class="form-control" id="email" placeholder="Ingrese su email" name="Email">
+      <label class="captionform" for="floatingInput">Email</label>
     </div>
-  </div>
-  </form>
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre" name="Nombre">
+      <label class="captionform" for="floatingPassword">Nombre</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="apellido" placeholder="Ingrese su nombre" name="Apellido">
+      <label class="captionform" for="floatingPassword">Apellido</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="file" name="imgDNI">
+      <label class="captionform" for="floatingInput">Imagen de su DNI</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="number" max="5" min="1" step="1" class="form-control" id="cantidad"
+        placeholder="Ingrese su numero de entradas" name="Cantidad">
+      <label class="captionform" for="floatingPassword">Numero de Entradas</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <select class="form-select" id="exhibicion" aria-label="Floating label select example" name="fkExhibicion">
+        @{
+          foreach (Exhibicion item in ViewBag.ListaExhibiciones)
+          {
+            <option value="@item.IdExhibicion">@item.Titulo</option>
+          }
+        }
+      </select>
+      <label class="captionform" for="floatingSelect">Exhibicion a Visitar</label>
+    </div>
+
+    <div class="container-fluid row align-center">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-3">
+        <button class="btn-hover color-3 confirmar captionform" type="button" data-toggle="modal" type="button"
+          data-target="#ModalSerie" onclick="FinReserva()">Comprar</button>
+      </div>
+      <div class="col-sm-3">
+        <button class="btn-hover color-3 confirmar captionform"><a asp-controller="Home" asp-action="BuscarReserva">
+            Buscar Mi Reserva</a></button>
+      </div>
+    </div>
+
+    <div class="modal fade" id="ModalSerie" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ModalTitle"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div id="ModalBody"></div>
+          </div>
+          <div class="modal-footer">
+            <input class="d-none" id="PrecioFinal" name="PrecioFinal">
+            <input class="d-none" id="idExhibicion" name="idExhibicion">
+            <button class="btn btn-succsses" type="submit">Confirmar</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+</form>
+
+

@@ -27,17 +27,20 @@ namespace tp_09.Controllers;
         [HttpPost]
         public IActionResult GuardarReserva(Reserva reserva, IFormFile imgDNI)
         {
-            if (imgDNI.Length > 0)
+            if (imgDNI != null)
             {
                 string wwwRootLocal = this.Environment.ContentRootPath + @"\wwwroot\" + imgDNI.FileName;
                 using(var stream = System.IO.File.Create(wwwRootLocal))
                 {
                     imgDNI.CopyToAsync(stream);
                 }
+            }else{
+                return RedirectToAction("CrearReserva");
             }
+            reserva.DNI = imgDNI.FileName;
             BD.InsertReserva(reserva);
-            @ViewBag.Reserva = BD.GetReservaById(reserva.IdReserva);
-                return View("Index");
+            ViewBag.Reserva = BD.GetReservaById(reserva.IdReserva);
+            return View("Index");
         }
 
         public IActionResult SobreNosotros()
@@ -51,4 +54,9 @@ namespace tp_09.Controllers;
             return View();
         }
         
+        public IActionResult BuscarReserva(int Id)
+        {
+            ViewBag.Reserva = BD.GetReservaById(Id);
+            return View();
+        }
     }
