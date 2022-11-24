@@ -54,9 +54,14 @@ namespace tp_09.Controllers;
             return View();
         }
         
-        public IActionResult BuscarReserva(int Id)
+        public Reserva Reservas(int Id)
         {
-            ViewBag.Reserva = BD.GetReservaById(Id);
-            return View();
+            return BD.GetReservaById(Id) ;
         }
+         
+        public IActionResult BuscarReserva()
+        {
+            ViewBag.ListaResevas = BD.GetReserva();
+            return View();
+         }
     }

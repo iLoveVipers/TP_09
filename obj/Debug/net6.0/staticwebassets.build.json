@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Kmqm1HpEQ4JmPsgQOZr4qjZ6j9kp/9UyfWxu/rjlqWI=",
+  "Hash": "CftpgYhRMpGQCqkaSehv36vXlaB9RGzg+3KIlgi16pI=",
   "Source": "tp_09",
   "BasePath": "_content/tp_09",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\1.png"
+    },
+    {
+      "Identity": "C:\\Users\\46645525\\Desktop\\tp_09\\wwwroot\\1200px-DNI_Argentina_2020_Frente.jpg",
+      "SourceId": "tp_09",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\46645525\\Desktop\\tp_09\\wwwroot\\",
+      "BasePath": "_content/tp_09",
+      "RelativePath": "1200px-DNI_Argentina_2020_Frente.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\1200px-DNI_Argentina_2020_Frente.jpg"
     },
     {
       "Identity": "C:\\Users\\46645525\\Desktop\\tp_09\\wwwroot\\2.png",
@@ -134,23 +151,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
-    },
-    {
-      "Identity": "C:\\Users\\46645525\\Desktop\\tp_09\\wwwroot\\FONDO.png",
-      "SourceId": "tp_09",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\46645525\\Desktop\\tp_09\\wwwroot\\",
-      "BasePath": "_content/tp_09",
-      "RelativePath": "FONDO.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\FONDO.png"
     },
     {
       "Identity": "C:\\Users\\46645525\\Desktop\\tp_09\\wwwroot\\img\\1.png",

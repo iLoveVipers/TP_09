@@ -6,7 +6,7 @@ using Dapper;
 namespace tp_09{
     public static class BD
     {
-        private static string _connectionString= @"Server=A-PHZ2-CIDI-004; DataBase=AQUARIO; Trusted_Connection=True;";
+        private static string _connectionString= @"Server=A-PHZ2-CIDI-050; DataBase=AQUARIO; Trusted_Connection=True;";
         
         public static List<Exhibicion> GetExhibiciones()
         {
@@ -31,6 +31,17 @@ namespace tp_09{
             return reserva;
         }
 
+         public static List<Reserva> GetReserva()
+        {
+            List<Reserva> Lista = null;
+            string SQL = "SELECT * FROM Reserva"; 
+            using(SqlConnection db = new SqlConnection(_connectionString))
+            {
+                Lista = db.Query<Reserva>(SQL).ToList(); 
+            } 
+            return Lista;
+        }
+
         public static void InsertReserva(Reserva item)
         {
             string SQL = "INSERT INTO Reservas(Email, Nombre, Apellido, DNI, idExhibicion, Cantidad, PrecioFInal)";
@@ -41,17 +52,7 @@ namespace tp_09{
                 db.Execute(SQL);
             }   
 
-            /*
-                SQL += " VALUES (@pEmail, @pNombre, '@pApellido', @pDNI, @pidExhibicion, @pCantidad) "; 
-                db.Execute(SQL, new {
-                    pEmail = item.Email,
-                    pNombre = item.Nombre,
-                    pApellido= item.Apellido,
-                    pDNI = item.DNI,
-                    pidExhibicion = item.idExhibicion,
-                    pCantidad = item.Cantidad
-                });
-            */
+    
         }
 
 

@@ -7,5 +7,21 @@
 </div>
 
 <div class="container-fluid">
-@ViewBag.GetReservaById(2)
+   
+    <ol class="list-group list-group-numbered">
+     @foreach (Reserva item in ViewBag.ListaResevas)
+    {
+            <div class="ms-2 me-auto">
+                <button>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="fw-bold">Reserva N° @item.IdReserva</div>
+                <p>Reserva a nombre de: @item.Nombre @item.Apellido</p>
+                 </button>  
+                </li>
+            </div
+    }
+    </ol>
+
+     
+
 </div>
