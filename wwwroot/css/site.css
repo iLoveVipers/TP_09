@@ -159,3 +159,40 @@ a {
   text-align: center;
   /* margin-left: 18rem; */
 }
+
+.perfiles{
+  border-radius: 50%;
+  width:17rem;
+  margin: 2rem;
+}
+
+.centrado{
+  height: 500px;
+  
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  
+  margin: auto;
+}
+
+.form-control{
+  background-color: #18181C;
+  border:0px
+}
+
+.form-select{
+  background-color: #18181C;
+  color:darkgray;
+  border: 0px;
+}
+
+.formdni{
+  color:darkgray;
+}
+
+.form-label{
+  color:white;
+}
