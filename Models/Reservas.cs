@@ -1,7 +1,7 @@
 using System;
 
 namespace tp_09{
-    public class Reserva
+    public class Reservas
     {
 
         private int  _IdReserva;
@@ -13,8 +13,8 @@ namespace tp_09{
 
         private int _Cantidad;
         private int _PrecioFinal;
-        public Reserva(){}
-        public Reserva (int idReserva, string email, string  Nombre, string Apellido, string DNI, int idExhibicion, int precioFinal)
+        public Reservas(){}
+        public Reservas (int idReserva, string email, string  Nombre, string Apellido, string DNI, int idExhibicion, int precioFinal)
         {
             _IdReserva = idReserva;
             Email = email;

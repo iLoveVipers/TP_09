@@ -3,9 +3,9 @@
     var nombre = $("#nombre").val();
     var exhibicion = $("#exhibicion").val();
     $("#idExhibicion").attr("value", exhibicion);
-    if (exhibicion = 2) exhibicion = "Maravillas Tropicales"
-    if (exhibicion = 4) exhibicion = "Paseo Por El Pacifico"
-    if (exhibicion = 6) exhibicion = "Visitando El Artico"
+    if (exhibicion == 2) exhibicion = "Maravillas Tropicales"
+    if (exhibicion == 4) exhibicion = "Paseo Por El Pacifico"
+    if (exhibicion == 6) exhibicion = "Visitando El Artico"
     var cantidad = $("#cantidad").val();
     var email = $("#email").val();
     var precioFinal = calcularPrecio(cantidad, exhibicion)
@@ -27,18 +27,25 @@ function BuscarReserva(IdS)
     $.ajax(
         {
             type:'POST',
-
             dataType: 'JSON',
-
-            url: 'Home/Buscar',
-
+            url: 'Reserva',
             data: { Id : IdS },
 
             success:
                 function (response)
                 {
-                    $('#ModalTitle').text("Reserva N° " + Id );
-                    $('#ModalBody').html(nombre + apellido + ",aca esta tu reserva para '" + exhibicion + "'!" + "<br> <br>" + "Cantidad de entradas: " + cantidad + " <br> Precio final: " + precioFinal);
+                    $('#ModalTitle').text("Reserva N° " + IdS);
+                    let exhibicion
+                    if (response.idExhibicion == 2) exhibicion = "Maravillas Tropicales"
+                    if (response.idExhibicion == 6) exhibicion = "Visitando El Artico"
+                    if (response.idExhibicion == 4) exhibicion = "Paseo Por El Pacifico"
+                    let ModalBody = `
+                    ${response.nombre} ${response.apellido}, acá esta tu reserva para: <b>${exhibicion}</b>!
+                    <br><br>Cantidad de entradas: ${response.cantidad}
+                    <br>Precio final: ${response.precioFinal}
+                    <br>Encontra tus entradas en tu inbox de: ${response.email}
+                    `
+                    $('#ModalBody').html(ModalBody);
                 }
         
     });

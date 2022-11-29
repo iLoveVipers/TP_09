@@ -25,7 +25,7 @@ namespace tp_09.Controllers;
         }
 
         [HttpPost]
-        public IActionResult GuardarReserva(Reserva reserva, IFormFile imgDNI)
+        public IActionResult GuardarReserva(Reservas reserva, IFormFile imgDNI)
         {
             if (imgDNI != null)
             {
@@ -38,7 +38,7 @@ namespace tp_09.Controllers;
                 return RedirectToAction("CrearReserva");
             }
             reserva.DNI = imgDNI.FileName;
-            BD.InsertReserva(reserva);
+            BD.InsertReservas(reserva);
             ViewBag.Reserva = BD.GetReservaById(reserva.IdReserva);
             return View("Index");
         }
@@ -54,14 +54,14 @@ namespace tp_09.Controllers;
             return View();
         }
         
-        public Reserva Reservas(int Id)
+        public Reservas Reserva(int Id)
         {
-            return BD.GetReservaById(Id) ;
+            return BD.GetReservaById(Id);
         }
          
         public IActionResult BuscarReserva()
         {
-            ViewBag.ListaResevas = BD.GetReserva();
+            ViewBag.ListaResevas = BD.GetReservas();
             return View();
          }
     }

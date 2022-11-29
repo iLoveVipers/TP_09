@@ -101,6 +101,11 @@ a{
   box-shadow: 0 4px 15px 0 rgba(60, 58, 61, 0);
 }
 
+.btn-hover.color-4 {
+  background-image: linear-gradient(to right, #493677, #543585, #412a6dfd, #543881);
+  box-shadow: 0 4px 15px 0 rgba(60, 58, 61, 0);
+}
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;
@@ -179,7 +184,7 @@ a {
 }
 
 .form-control{
-  background-color: #18181C;
+  background-color: #18181C !important;
   border:0px
 }
 
@@ -195,4 +200,19 @@ a {
 
 .form-label{
   color:white;
+}
+
+.lista{
+  color: white !important;
+  margin: 1rem;
+  text-align: center;
+  width: 20rem;
+  height: 5rem ;
+ border-radius: 0.5rem ;
+ align-items: center;
+}
+
+#container-info{
+  display: flex;
+  align-items: center;
 }
