@@ -39,7 +39,7 @@
 
     <div class="form-floating mb-3">
       <label for="formFile" class="form-label">Exhibicion</label>
-      <select class="form-select" id="exhibicion" aria-label="Floating label select example" name="fkExhibicion">
+      <select class="form-select" id="idExhibicion" aria-label="Floating label select example" name="idExhibicion">
         @{
           foreach (Exhibicion item in ViewBag.ListaExhibiciones)
           {
@@ -51,13 +51,11 @@
 
     <div class="container-fluid row align-center">
       <div class="col-sm-3"></div>
+      <div class="col-sm-3"></div>
+      <div class="col-sm-3"></div>
       <div class="col-sm-3">
         <button class="btn-hover color-3 confirmar captionform" type="button" data-toggle="modal" type="button"
           data-target="#ModalSerie" onclick="FinReserva()">Comprar</button>
-      </div>
-      <div class="col-sm-3">
-        <button class="btn-hover color-3 confirmar captionform"><a asp-controller="Home" asp-action="BuscarReserva">
-            Buscar Mi Reserva</a></button>
       </div>
     </div>
 
@@ -76,8 +74,7 @@
           <div class="modal-footer">
             <input class="d-none" id="PrecioFinal" name="PrecioFinal">
             <input class="d-none" id="idExhibicion" name="idExhibicion">
-            <button class="btn btn-info type="submit">Confirmar</button>
-            <button type="button" class="btn" data-dismiss="modal">Close</button>
+            <button class="btn btn-info" type="submit">Confirmar</button>
           </div>
         </div>
       </div>

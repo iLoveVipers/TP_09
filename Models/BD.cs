@@ -31,6 +31,18 @@ namespace tp_09{
             return reserva;
         }
 
+        public static List<Reservas> GetReservaByEmail(string email)
+        {
+            List<Reservas> reservas = new List<Reservas>();
+            string SQL = "SELECT * FROM Reservas R INNER JOIN Exhibiciones E ON R.idExhibicion=E.IdExhibicion "; 
+            SQL += " WHERE Email=@pEmail"; 
+            using(SqlConnection db = new SqlConnection(_connectionString))
+            {
+                reservas = db.Query<Reservas>(SQL, new { pEmail = email }).ToList(); 
+            } 
+            return reservas;
+        }
+
          public static List<Reservas> GetReservas()
         {
             List<Reservas> Lista = null;

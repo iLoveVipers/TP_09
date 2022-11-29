@@ -27,7 +27,7 @@ namespace tp_09.Controllers;
         [HttpPost]
         public IActionResult GuardarReserva(Reservas reserva, IFormFile imgDNI)
         {
-            if (imgDNI != null)
+            if (imgDNI.Length >0)
             {
                 string wwwRootLocal = this.Environment.ContentRootPath + @"\wwwroot\" + imgDNI.FileName;
                 using(var stream = System.IO.File.Create(wwwRootLocal))
@@ -54,9 +54,9 @@ namespace tp_09.Controllers;
             return View();
         }
         
-        public Reservas Reserva(int Id)
+        public List<Reservas> Reserva(string Email)
         {
-            return BD.GetReservaById(Id);
+            return BD.GetReservaByEmail(Email);
         }
          
         public IActionResult BuscarReserva()
